@@ -1,3 +1,4 @@
+import { Component } from 'react';
 import './App.css';
 
 var etudiants = [
@@ -11,10 +12,19 @@ var etudiants = [
   { nom: "Riyad", math: 18.0, phys: 13.0, fr: 15.0 },
 ];
 
+
+class Liste1 extends Component {
+  render(){
+    return <ul>
+      {etudiants.map(item => <li>{item.nom} - {((item.math+item.phys+item.fr)/3).toFixed(2)}</li>)}
+    </ul>;
+  }
+}
+
 function App() {
   return (
-    <div className="App">
-      
+    <div>
+      <Liste1 />
     </div>
   );
 }
