@@ -21,10 +21,33 @@ class Liste1 extends Component {
   }
 }
 
+class Liste2 extends Component {
+  render(){
+    return <table>
+      <tr>
+        <th>Nom</th>
+        <th>Math</th>
+        <th>Phys</th>
+        <th>Fr</th>
+        <th>Moyanne</th>
+      </tr>
+      {etudiants.map(item =>
+          <tr>
+            <td>{item.nom}</td>
+            <td>{item.math}</td>
+            <td>{item.phys}</td>
+            <td>{item.fr}</td>
+            <td>{((item.math+item.phys+item.fr)/3).toFixed(2)}</td>
+          </tr>
+      )}
+    </table>
+  }
+}
 function App() {
   return (
     <div>
       <Liste1 />
+      <Liste2 />
     </div>
   );
 }
